@@ -3,7 +3,7 @@ module.exports = {
         browser: true,
         es6: true,
     },
-    extends: ['airbnb-base'],
+    extends: ['prettier'],
     globals: {
         Atomics: 'readonly',
         SharedArrayBuffer: 'readonly',
@@ -13,11 +13,28 @@ module.exports = {
         ecmaVersion: 2018,
         sourceType: 'module',
     },
-    plugins: ['@typescript-eslint'],
+    settings: {
+        'import/resolver': {
+            node: {
+                extensions: ['.js', '.ts', '.tsx', '.jsx'],
+            },
+        },
+    },
+    plugins: ['@typescript-eslint', 'prettier', 'import'],
     rules: {
         indent: ['error', 4],
         'no-unused-vars': ['warn'],
-        'array-bracket-spacing': ['error', 'always'],
         'no-underscore-dangle': 0,
+        'import/extensions': [
+            'error',
+            'ignorePackages',
+            {
+                js: 'never',
+                jsx: 'never',
+                ts: 'never',
+                tsx: 'never',
+            },
+        ],
+        'prettier/prettier': 'error',
     },
-}
+};

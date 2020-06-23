@@ -6,6 +6,7 @@ import {
     TWITTER_ACCESS_TOKEN_KEY,
     TWITTER_ACCESS_TOKEN_SECRET,
 } from '../constants';
+// eslint-disable-next-line no-unused-vars
 import { Status } from './ScraperService';
 
 export default class TwitterService {
