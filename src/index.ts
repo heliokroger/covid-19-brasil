@@ -5,7 +5,7 @@ import Scraper from './services/ScraperService';
 
 TwitterService.connect();
 
-new CronJob('00 00 9,16 * * *', async () => {
+const run = async () => {
     await Browser.open();
 
     const status = await Scraper.getBrazilStatus();
@@ -14,4 +14,8 @@ new CronJob('00 00 9,16 * * *', async () => {
     await TwitterService.tweet(tweet);
 
     await Browser.close();
-}).start();
+};
+
+new CronJob('00 00 9,16 * * *', run).start();
+
+run();
