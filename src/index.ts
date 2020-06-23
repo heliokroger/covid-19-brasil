@@ -16,6 +16,8 @@ const run = async () => {
     await Browser.close();
 };
 
+console.log(true);
+
 new CronJob('00 00 9,16 * * *', run).start();
 
 run();
