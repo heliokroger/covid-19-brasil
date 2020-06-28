@@ -1,6 +1,6 @@
 import * as puppeteer from 'puppeteer';
 
-export default class BrowserService {
+export default class Browser {
     public static instance: puppeteer.Browser;
 
     public static async open() {
